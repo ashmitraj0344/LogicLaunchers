@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Complaint System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    width: 100%;
+    height: 100vh;
+    background-image: url();
+    background-size: cover;
+    background-position: center;
+}
+        
+section nav{
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+box-shadow: 0 0 100px #504e37;
+background:#58507bdf ;
+position: fixed;
+left: 0;
+z-index: 100;
+}
+        
+section nav .logo img{
+width: 100px;
+cursor: pointer;
+ margin: 8px 0;
+        }
+        
+        section nav ul{
+            list-style: none;
+        }
+        
+        section nav li{
+            display: inline-block;
+            padding: 0 10px;
+        }
+        
+        section nav li a{
+            text-decoration:none;
+            font-weight:550px;
+            color: #0a0a0a;
+            font-size:x-large;
+        
+            
+            
+        }
+        
+        section nav li a:hover{
+            color: white;
+        }
+        .main-header img{
+            margin-left: 320px;
+            margin-top: 200px;
+            width: 580px;
+            height: auto;
+        }
+
+#complaint-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(246, 243, 243, 0.907);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+#complaint-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0044cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #003399;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+
+<body>
+
+    <section>
+
+        <nav>
+
+            <div class="logo">
+                <img src="logo.jpg">
+            </div>
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="filecomplaint.html">Raise complaint</a></li>
+                <li><a href="#">Check Status</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="login.html">Log In</a></li>
+                <li><select class="languageDropdown" id="langdropdown"
+                    onChange="changelangdropdown('')" title="Select Language">
+                        <option value="en" 
+                            selected="selected" >English</option>
+                        <option value="hi" >
+                            हिन्दी
+                            </option>
+                            <option value="bn" >
+                            বাংলা
+                            </option>
+                            
+                            <option value="mr" >
+                            मराठी
+                            </option> 
+                            
+                            <option value="gu" >
+                            ગુજરાતી
+                            </option> 
+                            
+                            <option value="kn" >
+                            ಕನ್ನಡ
+                            </option> 
+                            
+                            <option value="ml" >										
+                            മലയാളം
+                            </option> 
+                            
+                            <option value="pa" >
+                            ਪੰਜਾਬੀ
+                            </option> 
+                            
+                            <option value="or" >
+                            ଓଡିଆ
+                            </option> 
+                            
+                            <option value="sa" >									
+                            संस्कृत
+                            </option> 
+                            
+                            <option value="ta" >									
+                            தமிழ்
+                            </option> 
+                            
+                            <option value="te" >
+                            తెలుగు
+                            </option> 
+                            
+                            <option value="ur" >
+                            اردو
+                            </option> 
+                            
+                </select></li>
+                
+            
+            </ul>
+
+            <div class="sign_in">
+                <ul>
+                   
+                    <li><a href="login.html">Sign in</a></li>
+                    <li><a href="Sign up.html">Sign up</a></li>
+                </ul>  
+            </div>    
+        </nav>
+    </section>
+
+    <section id="complaint-form">
+        <h2>File a Complaint</h2>
+        <form action="/submit_complaint" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="pnr-number">PNR Number:</label>
+            <input type="text" id="prn-number" name="pnr_number" required>
+
+            <label for="train-number">Train Number:</label>
+            <input type="text" id="train-number" name="train_number" required>
+
+            <label for="issue">Issue:</label>
+            <textarea id="issue" name="issue" required></textarea>
+
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+            <button type="submit">Submit Complaint</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Railway Complaint System</p>
+    </footer>
+
+</body>
+</html>
